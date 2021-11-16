@@ -1,0 +1,117 @@
+*{
+    margin:0px ; 
+    padding : 0px; 
+    box-sizing: border-box;
+}
+body{
+    /* background-color: dimgray; */
+}
+.borders-warpper{
+    width: 100vw;
+    height: 100vh;
+    /* background-color: rosybrown; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box {
+    width : 200px ;
+    height: 200px;
+    margin : 0px;
+    background-color: #f7f8f8;
+}
+
+.normal{
+    border: 10px solid rgb(171, 171, 171);
+}
+.img-gradent{
+    border :10px solid;
+    border-image: linear-gradient(to right , purple ,pink) 1;
+}
+.outline{
+    position: relative;
+    outline: solid 10px turquoise;
+}
+
+.radius{
+    position: relative;
+    border: 10px dashed deeppink;
+    border-radius: 30px 400px 30px;
+}
+.radius::after{
+    content: '';
+    top: 0px;
+    left: 200px;
+    position: absolute ;
+    width: 100%;
+    height: 100%;
+    outline: 10px dashed deeppink;
+    border-radius: 400px 30px 400px;
+    background-color: greenyellow;
+    /* transform:rotateY(90deg); */
+}
+.light{
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+.light::after{
+    content : ' ';
+    position : absolute ; 
+    width: 100% ;
+    height: 100% ;
+    top: 0px ;
+    left: 0px;
+    border-radius: 0px 30px 10px;
+    background: linear-gradient(90deg , #b57262 ,#7f87e0 ,#ba8e3b );
+    filter: blur(18.4px);
+    transform: rotate(10deg);
+    z-index: -1;
+}
+.bg-cuting{
+    position: relative;
+    background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+    animation: rotate 1.5s linear infinite;
+}
+.bg-cutting_inner{
+    height: 90%;
+    width: 90%;
+    position: absolute;
+    background: rgb(255, 255, 255);
+    top: 10px;
+    left: 10px;
+    z-index: 9;
+}
+span {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+  }
+span:nth-child(1) {
+    filter: blur(5px);
+  }
+  
+  span:nth-child(2) {
+    filter: blur(10px);
+  }
+  
+  span:nth-child(3) {
+    filter: blur(25px);
+  }
+  
+  span:nth-child(4) {
+    filter: blur(150px);
+  }
+
+@keyframes rotate {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
